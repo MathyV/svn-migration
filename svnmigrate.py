@@ -130,7 +130,7 @@ def sync(config):
 
     print("Performing svn2git")
     with open(config.svn2gitlog, "w") as f:
-        subprocess.run(["svn2git",
+        subprocess.run(["svn-all-fast-export",
             "--identity-map", config.authormap,
             "--rules", config.rules,
             "--add-metadata",

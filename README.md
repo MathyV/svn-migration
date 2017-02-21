@@ -9,7 +9,7 @@ around other tools so no real innovation to be found here, just automation.
 * A Linux system
 * Python3 (tested with Python 3.5)
 * SVN (including svnsync)
-* svn2git (from https://github.com/svn-all-fast-export/svn2git/ at least v1.0.11 is advised)
+* svn2git a.k.a. svn-all-fast-export (from https://github.com/svn-all-fast-export/svn2git/ at least v1.0.11 is advised)
 * git
 
 *All dependencies should be installed in $PATH!*
