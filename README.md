@@ -4,6 +4,21 @@ I wrote this script since I found myself always taking the same actions when
 performing SVN 2 GIT migrations for customers. It is a very simple wrapper
 around other tools so no real innovation to be found here, just automation.
 
+# BIG FAT DISCLAIMER
+
+Do not expect this script to automagically convert a SVN repository for you.
+Performing a conversion, especially on SVN repositories with complex histories,
+can be quite a lengthy process, usually involving a lot of trial-and-error and
+sometimes even fixing stuff in svn-all-fast-export.
+
+Feel free to contact me if you need support in converting your own SVN
+repositories. I offer commercial support to companies. For open source projects
+I am willing to help out freely provided I have the time for it.
+
+# License
+
+No license, do whatever you want with it.
+
 ## Dependencies
 
 * A Linux system
