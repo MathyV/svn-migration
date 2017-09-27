@@ -130,7 +130,7 @@ def sync(config):
 
     print("Performing svn2git")
     with open(config.svn2gitlog, "w") as f:
-        subprocess.run(["svn-all-fast-export",
+        subprocess.run(["svn2git",
             "--identity-map", config.authormap,
             "--rules", config.rules,
             "--add-metadata",
@@ -153,6 +153,7 @@ actions = parser.add_subparsers(metavar='action', help='Action to perform')
 create_parser = actions.add_parser('create', help='Create a new migration project')
 create_parser.add_argument('name', help='Name of the project')
 create_parser.add_argument('source', help='Source repository (URL)')
+create_parser.add_argument('target', help='Target repository (URL)')
 create_parser.add_argument('--authormap', help='Username mapping file', required=True)
 create_parser.add_argument('--nofetch', action='store_true', help='Do not perform the initial data fetch')
 create_parser.set_defaults(func=create)
@@ -160,6 +161,8 @@ create_parser.set_defaults(func=create)
 sync_parser = actions.add_parser('sync', help='Sync a migration')
 sync_parser.add_argument('name', help='Migration project to operate on')
 sync_parser.add_argument('--nofetch', action='store_true', help='Do not fetch data from the remote SVN repository')
+sync_parser.add_argument('--push', action='store_true', help='Push the data to the remote Git repository')
+sync_parser.add_argument('--force', action='store_true', help='Force push to the remote repository')
 sync_parser.set_defaults(func=sync)
 
 config = Configuration()
